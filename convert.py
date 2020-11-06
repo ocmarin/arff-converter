@@ -83,6 +83,9 @@ def extract_data(path_name: str) -> {}:
         while attrib_num < len(split):
             # The current attribute
             attrib = split[attrib_num]
+            if attrib == "?":
+                attrib_num += 1
+                continue
             # If the number of the attribute isn't in the data, make the dictionary for it.
             if attrib_num >= len(data):
                 data.append({})
